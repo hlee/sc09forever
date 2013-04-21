@@ -16,7 +16,7 @@ $(function() {
       ZIndex++;
       var CSSItem = { 'z-index' : ZIndex, 'transform' : 'rotate(0deg)'};
       $(this).css(CSSItem);
-      var AltText = $(this).find('img').attr('alt');
+      var AltText = $(this).find('img').attr('name');
       $(this).append('<p class="name"> ' + AltText + ' </p>');
       $(this).append('<p class="description"> ' + $(this).find('img').attr('description') + ' </p>');
     }

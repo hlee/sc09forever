@@ -1,7 +1,8 @@
 class ClassmatesController < ApplicationController
   before_action :set_classmate, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with :name => "songjiayang", :password => "liushan1314", :except => [:new,:create]
+ 
 
-  # GET /classmates
   # GET /classmates.json
   def index
     @classmates = Classmate.all
@@ -28,7 +29,7 @@ class ClassmatesController < ApplicationController
 
     respond_to do |format|
       if @classmate.save
-        format.html { redirect_to @classmate, notice: 'Classmate was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Classmate was successfully created.' }
         format.json { render action: 'show', status: :created, location: @classmate }
       else
         format.html { render action: 'new' }
@@ -69,6 +70,6 @@ class ClassmatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classmate_params
-      params.require(:classmate).permit(:name, :email, :qq, :description)
+      params.require(:classmate).permit(:name, :email, :qq, :description, :img_url)
     end
 end

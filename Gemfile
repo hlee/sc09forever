@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0.beta1'
-gem 'sqlite3'
 gem "slim-rails"
 gem 'twitter-bootstrap-rails'
 group :assets do
@@ -14,8 +13,17 @@ group :development, :test do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 	gem 'better_errors'
+	gem 'sqlite3'
 end
 
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
+
+group :production do
+  gem 'pg'
+end
+
+group :production do
+  gem 'pg'
+end

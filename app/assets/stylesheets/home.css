@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.home {
+  overflow:hidden;
+  background:#A4CAEF;
+}
+
+.item {
+  width:335px;
+  height:270px;
+  background:#FFF;
+  position:absolute;
+}
+
+.item  img {
+    width:300px;
+    height:200px;
+    margin:15px 0 0 18px;
+}
+.item .name {
+    text-align:center;
+    font:italic 18px cursive;
+    color:#333;
+    margin: 5px 0 0;
+}
+
+.item .description{
+    text-align:center;
+    font:italic 12px cursive;
+    color:#333;
+    margin: 5px 0 0;
+}

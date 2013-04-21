@@ -1,0 +1,29 @@
+- model_class = Classmate
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.pluralize
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:name)
+      th= model_class.human_attribute_name(:email)
+      th= model_class.human_attribute_name(:qq)
+      th= model_class.human_attribute_name(:description)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - @classmates.each do |classmate|
+      tr
+        td= link_to classmate.id, classmate_path(classmate)
+        td= classmate.name
+        td= classmate.email
+        td= classmate.qq
+        td= classmate.description
+        td=l classmate.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_classmate_path(classmate), :class => 'btn btn-mini'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), classmate_path(classmate), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_classmate_path, :class => 'btn btn-primary'
+

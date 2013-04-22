@@ -70,6 +70,6 @@ class ClassmatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def classmate_params
-      params.require(:classmate).permit(:name, :email, :qq, :description, :img_url)
+      params.require(:classmate).permit(:name, :email, :qq, :description, :avatar)
     end
 end

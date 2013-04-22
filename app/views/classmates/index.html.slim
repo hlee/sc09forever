@@ -19,7 +19,7 @@ table class="table table-striped"
         td= classmate.email
         td= classmate.qq
         td= classmate.description
-        td=l classmate.created_at
+        td= classmate.created_at
         td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_classmate_path(classmate), :class => 'btn btn-mini'
           '

@@ -1,25 +1,25 @@
-= form_for @classmate, :html => { :class => "form-horizontal" } do |f|
+= form_for @classmate, :html => { :class => "form-horizontal",:multipart => true } do |f|
   .control-group
-    = f.label :name, :class => 'control-label'
+    = f.label '名字', :class => 'control-label'
     .controls
       = f.text_field :name, :class => 'text_field'
   .control-group
-    = f.label :email, :class => 'control-label'
+    = f.label '邮件', :class => 'control-label'
     .controls
       = f.text_field :email, :class => 'text_field'
   .control-group
-    = f.label :qq, :class => 'control-label'
+    = f.label 'qq号', :class => 'control-label'
     .controls
       = f.text_field :qq, :class => 'text_field'
   .control-group
-    = f.label :description, :class => 'control-label'
+    = f.label '祝福话语', :class => 'control-label'
     .controls
       = f.text_field :description, :class => 'text_field'
   .control-group
-    = f.label :img_url, :class=>'control-label'
+    = f.label '个性头像', :class=>'control-label'
     .controls
-      = f.text_field :img_url, :class => 'text_field'
+      = f.file_field :avatar, :class => 'text_field'
   .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
+    = f.submit '提交', :class => 'btn btn-primary'
     '
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), classmates_path, :class => 'btn'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'btn'

@@ -16,5 +16,7 @@ module Sc09forever
       g.fixture_replacement :factory_girl
       g.test_framework :rspec, :fixture => true
     end
+    
+    config.i18n.default_locale = 'zh-CN'
   end
 end
